@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 100px;
+            background-color: black;
+            color:#fff;
+        }
+        #msg_multa{
+            color:red;
+        }
+        #msg_limite{
+            color:green;
+        }
+        div#eventos{
+            background-color: blue;
+            width: 200px;
+            height:200px;
+            line-height: 200px; /*Espaçamento com base no tamanho da fonte de corrente de a percentagem de linhas. */
+            text-align: center; 
+            border-radius: 50%;           
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <h1>Calcular Multa</h1>
+        <input type="number" name="txt_valor1" id="txt_valor1">
+        <input type="button" value="Calcular" onclick="calcular()">
+        <div id="div_resposta"></div>
+    </form>
+    <br><br><hr><br>
+    <div id="eventos">
+        Eventos
+    </div>
+
+    <!--Parte JS-->
+    <script>
+        var div_eventos = document.getElementById('eventos')
+        div_eventos.addEventListener('mouseenter', entrar)
+        div_eventos.addEventListener('mouseout', sair)
+        div_eventos.addEventListener('click', clicar)
+
+        function entrar(){
+            div_eventos.style.backgroundColor='red'
+            div_eventos.style.borderRadius='0'
+            div_eventos.style.opacity= '100'            
+        }
+        function sair() {
+            div_eventos.style.backgroundColor ='blue'
+            div_eventos.style.borderRadius = '50%'
+            div_eventos.style.opacity='0.5'
+        }
+        function clicar() {
+            div_eventos.style.backgroundColor='yellow'
+            div_eventos.style.transform='rotateZ(360deg)'
+        }
+        function calcular() {
+            var txt_valor1 = Number(document.querySelector('input#txt_valor1').value)
+            var div_resposta = document.querySelector('div#div_resposta')
+            if(txt_valor1 > 60) {
+                div_resposta.innerHTML='<p id="msg_multa">Vc Foi Multado!<br>Ulrapassou a velocidade permitida!</p>'
+            }else{
+                div_resposta.innerHTML='<p id="msg_limite">Parabéns vc está dentro do limite permitido. </p>'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passo no DOM</title>
+    <style>
+        body{
+            background-color:darkblue;
+            color: #fff;
+            font: normal 18pt Arial;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong> em java Script</p>
+    <div>Clique em mim</div><br><hr><br>
+<!-- Dom Modelo de objetos, conjunto de objetos dentro do navegador não funciona no node 
+Arvore Dom 
+Começa com raiz - window :
+                    ->locate
+                    -> document = html =head, body
+                    ->history 
+-->
+    <script>
+        var corpo = window.document.getElementsByTagName('body')[0]
+        //var corpo = window.document.body
+        var p1    = window.document.getElementsByTagName('p')[1]
+        
+        p1.style.color='red'
+        corpo.style.background = 'black'
+
+       // window.document.write(p1.innerText)
+       /* window.document.write('Olá Mundo <br>')
+        window.document.write(window.document.charset + '<br>')
+        window.document.write(window.navigator.appName + '<br>')
+        window.document.write(window.document.URL+ '<br>')*/
+    </script>
+</body>
+</html>

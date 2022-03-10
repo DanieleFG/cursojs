@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            background: rgb(42,139,42);
+            color: #fff;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- div#area aperta tab -->
+ <div id="area" >
+    Interaja....
+ </div>
+ 
+    <script>
+        var divArea = window.document.getElementById('area')
+
+        /**
+         * 
+         *  No lugar de colocar os eventos no html: 
+         <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"> 
+            posso utilizar o addEventListener
+        */
+        divArea.addEventListener('click', clicar)
+        divArea.addEventListener('mouseenter', entrar)
+        divArea.addEventListener('mouseout', sair)
+
+        function clicar() {
+            divArea.innerText = 'Clicou!!'
+            divArea.style.background = 'red'
+        }
+        function entrar() {
+            divArea.innerText='Entrou'
+            divArea.style.background = 'yellow'
+            divArea.style.color ='#000'
+        }
+
+        function sair() {
+            divArea.innerText='Sair'
+            divArea.style.background = 'rgb(42,139,42)'
+        }
+
+    </script>
+</body>
+</html>

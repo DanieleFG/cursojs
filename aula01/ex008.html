@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional - If e else</title>
+</head>
+<style>
+    body{
+        padding: 100px;
+    }
+  #btnVerificar{
+        background-color: green;
+        border: 1px ;
+        border-radius: 8px;
+        padding: 10px;
+        color: #fff;
+    }
+    #btnVerificar:hover{
+        background-color:cadetblue;
+        font-size: 1rem;        
+    }
+    .msgMulta{
+        color: red;
+    }
+    .msgPadrao{
+        color:green;
+    }
+</style>
+<body>
+    <h1>Sistema de Multa</h1>
+    <input type="number" name="txtVelocidade" id="txtVelocidade">
+    <input type="button" value="Verificar" id="btnVerificar">
+    <div id="resultado">
+        Resultado
+    </div>
+</body>
+<script>
+    var btnVerificar = document.getElementById('btnVerificar')
+    
+    btnVerificar.addEventListener('click', calcular)
+    
+    function calcular() {
+        var txtVelocidade = Number(document.querySelector('input#txtVelocidade').value)
+        var resultado = document.querySelector('div#resultado')
+        resultado.innerHTML = `<p>Sua velocidade atual é de ${txtVelocidade} Km/h</p>`
+        if(txtVelocidade >60) {
+            resultado.innerHTML =' <p class="msgMulta">Vc ultrapassou a velocidade Permitida</p><p class="msgMulta">Vc Foi Multado!</p>'
+        }else {
+            resultado.innerHTML =' <p class="msgPadrao">Muito bem ! Sua Velocidade está detro do limite permitido</p>'
+        }
+        resultado.innerHTML += `<p>Dirijan sempre com cinto de segurança</p>`
+    }
+</script>
+</html>

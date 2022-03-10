@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão da Aula de DOM</title>
+    <style>
+        body{
+            padding: 100px;
+            background: midnightblue;
+            color: #fff;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 class='atributosH1'>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p name='tagP'>Aprendendo a usar <strong>DOM</strong> em java Script</p>
+    <div id='alterarDiv'>Clique em mim</div>
+    <div id='alterarDiv2'>Com fome</div><br><hr><br>
+    <script>
+        var corpo = window.document.body;
+        var p1 = window.document.getElementsByTagName('p')[0]
+        var div = window.document.getElementById('alterarDiv')
+        var p2 = window.document.getElementsByName('tagP')[0]
+        var div2 = window.document.querySelector('div#alterarDiv2')
+
+        window.document.write('Olá mundo')
+        window.document.write(p1.innerText)
+
+        p1.style.color = 'red';
+        corpo.style.background ='black'
+        div.style.color='orange'
+        div.innerText = 'Alterando conteudo da div ...'
+        p2.innerText = 'Vou vencer, Deus é comigo'
+        div2.style.color ='yellow'
+
+        window.document.getElementsByClassName('atributosH1')[0].innerText ='H1 mudando'
+
+    </script>
+</body>
+</html>

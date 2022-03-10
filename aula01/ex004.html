@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sexta Aula - Funções com String</title>
+    <style>
+        body {
+            background-color: rgb(204, 222, 176); /* Comentario em CSS */
+            padding-left: 50px;
+            font: normal 18px Stencil;
+        }
+    </style>
+    <script>
+       var nome = window.prompt('Qual o seu nome?')
+       document.writeln(`Seu nome tem ${nome.length} letras<br>`)
+       document.writeln(`Seu nome em Maiúscula ${nome.toUpperCase()}<br>`)
+       document.writeln(`Seu nome em Minuscula ${nome.toLowerCase()}<br>`)
+
+       //Função com Numero
+       var n1 = 1545.5
+       n1.toFixed(2) // duas casas decimais
+       n1.toFixed(2).replace('.', ',') // coloca dusas casas decimais e troca ponto por virgula
+       n1.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'}) // Localiza e converter na moeda do pais indicado
+       n1.toLocaleString('pt-BR', {style: 'currency', currency:'USD'}) // Localiza e converter na moeda do pais indicado
+       n1.toLocaleString('pt-BR', {style: 'currency', currency:'EUR'}) // Localiza e converter na moeda do pais indicado
+
+
+    
+    </script>
+</head>
+<body>
+<h1>Cuso de Js - Aula 6</h1> <!-- Comentario em html--->
+<p>Bem Vindo:{ nome } </p>
+</body>
+</html>
