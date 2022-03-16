@@ -32,7 +32,7 @@
 var agora = new Date()
 var diaSem = agora.getDay()
 var dia = agora.getDate()
-console.log(diaSem)
+//console.log(diaSem)
 switch(diaSem) {
     case 1:
         console.log(`Segunda dia : ${dia}`)
